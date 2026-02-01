@@ -31,7 +31,7 @@ export const SmsPermissionModal: React.FC<SmsPermissionModalProps> = ({ isOpen, 
 
         <div className="p-6 space-y-4">
           <p className="text-zinc-300 text-sm leading-relaxed text-center">
-            CREDFIN can detect transaction SMS from your bank (UPI, Debit, Credit) and automatically prepare them for your review.
+            Dr.Cr can detect transaction SMS from your bank (UPI, Debit, Credit) and automatically prepare them for your review.
           </p>
 
           <div className="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800 space-y-3">

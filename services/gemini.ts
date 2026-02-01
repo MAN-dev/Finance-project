@@ -3,14 +3,13 @@ import { Transaction, Account } from "../types";
 import { formatCurrency } from "../constants";
 
 // Initialize Gemini Client
-const apiKey = process.env.API_KEY || ''; // Ideally handled via secure proxy or input in production
-const ai = new GoogleGenAI({ apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateFinancialInsights = async (
   transactions: Transaction[], 
   accounts: Account[]
 ): Promise<string> => {
-  if (!apiKey) {
+  if (!process.env.API_KEY) {
     return "API Key is missing. Please configure the environment to use AI features.";
   }
 
@@ -26,7 +25,7 @@ export const generateFinancialInsights = async (
   ).join('\n');
 
   const prompt = `
-    You are a financial advisor for the app CREDFIN. 
+    You are a financial advisor for the app Dr.Cr. 
     Analyze the following recent transactions (last 30 days) and provide 3 brief, actionable insights or savings tips.
     Be concise, friendly, and professional. Focus on spending habits.
     

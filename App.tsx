@@ -200,7 +200,7 @@ const App: React.FC = () => {
     return balances;
   }, [state]);
 
-  const totalBalance = Object.values(accountBalances).reduce((a, b) => a + b, 0);
+  const totalBalance = Object.values(accountBalances).reduce((a: number, b: number) => a + b, 0);
 
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
@@ -284,15 +284,27 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-40 bg-[#09090b]/60 backdrop-blur-xl border-b border-white/5 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 shrink-0">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                 <path d="M12 4v8" />
-                 <path d="M8 8h8" />
-                 <path d="M8 18h8" />
-               </svg>
+            {/* New Logo */}
+            <div className="w-8 h-8 rounded-lg overflow-hidden relative bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                 <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-br from-rose-500/20 to-rose-600/20" />
+                 <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-br from-emerald-500/20 to-emerald-600/20" />
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                     <path d="M7 17L17 7" className="stroke-zinc-700" strokeWidth="2" />
+                     <path d="M17 7H13" className="stroke-emerald-500" />
+                     <path d="M17 7V11" className="stroke-emerald-500" />
+                     <path d="M7 17H11" className="stroke-rose-500" />
+                     <path d="M7 17V13" className="stroke-rose-500" />
+                 </svg>
             </div>
-            <span className="text-xl font-bold tracking-tight text-white hidden sm:block">CREDFIN</span>
-            <span className="text-xl font-bold tracking-tight text-white sm:hidden">CF</span>
+            
+            <div className="hidden sm:block text-xl font-bold tracking-tight">
+                <span className="text-rose-500">Dr.</span>
+                <span className="text-emerald-500">Cr</span>
+            </div>
+            <div className="sm:hidden text-xl font-bold tracking-tight">
+                <span className="text-rose-500">D</span>
+                <span className="text-emerald-500">C</span>
+            </div>
           </div>
 
           {/* Ticker inserted here */}

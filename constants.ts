@@ -1,6 +1,6 @@
 import { Account } from './types';
 
-export const APP_NAME = "CREDFIN";
+export const APP_NAME = "Dr.Cr";
 
 export const DEFAULT_ACCOUNTS: Account[] = [
   { id: 'acc_1', name: 'Personal', color: '#8b5cf6', initialBalance: 50000 },

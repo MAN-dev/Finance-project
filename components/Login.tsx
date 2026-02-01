@@ -19,9 +19,9 @@ const DETECTED_GOOGLE_ACCOUNTS = [
   },
   {
     id: 'g_2',
-    name: 'CredFin Demo',
-    email: 'demo@credfin.app',
-    avatar: 'https://ui-avatars.com/api/?name=CredFin+Demo&background=6d28d9&color=fff&rounded=true&bold=true'
+    name: 'Dr.Cr Demo',
+    email: 'demo@drcr.app',
+    avatar: 'https://ui-avatars.com/api/?name=Dr+Cr+Demo&background=6d28d9&color=fff&rounded=true&bold=true'
   }
 ];
 
@@ -92,19 +92,27 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px]" />
+      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-rose-500/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[100px]" />
 
       <div className="w-full max-w-md z-10 space-y-8">
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-violet-800 rounded-2xl mb-6 shadow-2xl shadow-primary/20">
-             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                 <path d="M12 4v8" />
-                 <path d="M8 8h8" />
-                 <path d="M8 18h8" />
+          {/* Logo Box */}
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#18181b] border border-zinc-800 rounded-2xl mb-6 shadow-2xl relative overflow-hidden">
+             <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-br from-rose-500/20 to-rose-600/20" />
+             <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-br from-emerald-500/20 to-emerald-600/20" />
+             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M7 17L17 7" className="stroke-zinc-700" strokeWidth="2" />
+                 <path d="M17 7H13" className="stroke-emerald-500" />
+                 <path d="M17 7V11" className="stroke-emerald-500" />
+                 <path d="M7 17H11" className="stroke-rose-500" />
+                 <path d="M7 17V13" className="stroke-rose-500" />
              </svg>
           </div>
-          <h1 className="text-4xl font-bold text-white tracking-tight">CREDFIN</h1>
+          <h1 className="text-4xl font-bold tracking-tight">
+            <span className="text-rose-500">Dr.</span>
+            <span className="text-emerald-500">Cr</span>
+          </h1>
           <p className="text-zinc-400">Premium Financial Management</p>
         </div>
 
@@ -215,7 +223,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
                <div className="mt-8 pt-6 border-t border-zinc-800 text-center">
                 <p className="text-[10px] text-zinc-600 leading-relaxed">
-                  By continuing, you agree to CREDFIN's <a href="#" className="hover:text-zinc-400 underline">Terms of Service</a> and <a href="#" className="hover:text-zinc-400 underline">Privacy Policy</a>.
+                  By continuing, you agree to Dr.Cr's <a href="#" className="hover:text-zinc-400 underline">Terms of Service</a> and <a href="#" className="hover:text-zinc-400 underline">Privacy Policy</a>.
                 </p>
               </div>
           </div>
@@ -249,7 +257,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <div className="p-4 py-2">
               <div className="px-2 py-4">
                  <p className="text-gray-700 font-medium">Choose an account</p>
-                 <p className="text-gray-500 text-sm">to continue to <span className="font-semibold text-primary">CREDFIN</span></p>
+                 <p className="text-gray-500 text-sm">to continue to <span className="font-semibold text-primary">Dr.Cr</span></p>
               </div>
 
               <div className="flex flex-col gap-1 mb-2">
@@ -283,7 +291,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
             <div className="p-6 border-t border-gray-100 bg-gray-50">
               <p className="text-xs text-gray-500 text-center leading-relaxed">
-                To continue, Google will share your name, email address, and profile picture with CREDFIN. Before using this app, you can review CREDFIN's <a href="#" className="text-blue-700 hover:underline">Privacy Policy</a> and <a href="#" className="text-blue-700 hover:underline">Terms of Service</a>.
+                To continue, Google will share your name, email address, and profile picture with Dr.Cr. Before using this app, you can review Dr.Cr's <a href="#" className="text-blue-700 hover:underline">Privacy Policy</a> and <a href="#" className="text-blue-700 hover:underline">Terms of Service</a>.
               </p>
             </div>
           </div>
