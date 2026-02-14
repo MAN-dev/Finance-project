@@ -258,12 +258,12 @@ const App: React.FC = () => {
     }));
   };
 
-  // Auth Guard
-  // Auto-login with demo user on first visit
-  const effectiveUser = user || { name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=DemoUser' };
-  useEffect(() => {
-    if (!user) setUser(effectiveUser);
-  }, []);
+// Initialize demo user if no user exists
+  if (!user) {
+    setUser({ name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Demo' });
+  }
+
+
   
   return (
     <div className="min-h-screen pb-20 sm:pb-10">
