@@ -259,10 +259,12 @@ const App: React.FC = () => {
   };
 
   // Auth Guard
-  if (!user) {
-    return <Login onLogin={handleLogin} />;
-  }
-
+  // Auto-login with demo user on first visit
+  const effectiveUser = user || { name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=DemoUser' };
+  useEffect(() => {
+    if (!user) setUser(effectiveUser);
+  }, []);
+  
   return (
     <div className="min-h-screen pb-20 sm:pb-10">
       
