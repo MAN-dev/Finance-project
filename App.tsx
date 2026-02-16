@@ -259,9 +259,12 @@ const App: React.FC = () => {
   };
 
 // Initialize demo user if no user exists
-  if (!user) {
-    setUser({ name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Demo' });
-  }
+ // Initialize demo user if no user exists
+ useEffect(() => {
+    if (!user) {
+      setUser({ name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Demo' });
+    }
+  }, []);
 
 
   
