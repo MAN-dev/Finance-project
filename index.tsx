@@ -10,12 +10,15 @@ if (!rootElement) {
 
 try {
   const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-} catch (error) {
-  console.error('Failed to mount React app:', error);
-  document.getElementById('root').innerHTML = '<div style="color: red; padding: 20px;">Error: ' + (error.message || error) + '</div>';
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} catch (err) {
+  console.error('Failed to mount React app:', err);
+  const errorMessage = err instanceof Error ? err.message : String(err);
+  if (rootElement) {
+    rootElement.innerHTML = `<div style="color: red; padding: 20px; font-family: monospace;">Error initializing app: ${errorMessage}</div>`;
+  }
 }
