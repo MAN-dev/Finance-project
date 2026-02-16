@@ -24,7 +24,7 @@ import { TransactionTicker } from './components/TransactionTicker';
 type ViewMode = 'activity' | 'favorites' | 'analytics';
 
 const App: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | { name: 'Demo User', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Demo' }>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('activity');
   
   const [state, setState] = useState<FinancialState>({
