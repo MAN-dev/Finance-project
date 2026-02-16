@@ -53,6 +53,13 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadedUser = loadUser();
     if (loadedUser) setUser(loadedUser);
+        
+    // Auto-login demo user if no user exists
+    if (!loadedUser) {
+      const demoUser = { id: 'demo', name: 'Demo User', email: 'demo@drcr.app' };
+      saveUser(demoUser);
+      setUser(demoUser);
+    }
     
     const data = loadData();
     if (data) setState(data);
@@ -262,6 +269,12 @@ const App: React.FC = () => {
 
   
   return (
+        {!user ? (
+      <Login onLogin={(loggedInUser) => {
+        saveUser(loggedInUser);
+        setUser(loggedInUser);
+      }} />
+    ) : (
     <div className="min-h-screen pb-20 sm:pb-10">
       
       {/* SMS Permission Modal */}
@@ -614,5 +627,6 @@ const App: React.FC = () => {
     </div>
   );
 };
+    )}
 
 export default App;
