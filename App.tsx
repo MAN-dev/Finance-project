@@ -270,6 +270,7 @@ const App: React.FC = () => {
   
   return (
         {!user ? (
+              <>
       <Login onLogin={(loggedInUser) => {
         saveUser(loggedInUser);
         setUser(loggedInUser);
@@ -627,6 +628,7 @@ const App: React.FC = () => {
     </div>
   );
 };
+    </>
     )}
 
 export default App;
