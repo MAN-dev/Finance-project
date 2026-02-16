@@ -324,7 +324,7 @@ const App: React.FC = () => {
               onClick={() => setIsProfileModalOpen(true)}
               className="relative group focus:outline-none"
             >
-                {user.avata?r ? (
+                {user.avatar ? (
                 <img src={user.avatar} alt="User" className="w-9 h-9 rounded-full border border-zinc-700 object-cover group-hover:border-primary transition-colors" />
                 ) : (
                 <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-primary to-accent border border-white/10 group-hover:border-primary transition-colors" />
@@ -499,7 +499,7 @@ const App: React.FC = () => {
         <div className="space-y-6">
             <div className="flex justify-center">
                 <ImageUpload 
-                    currentImage={user.?avatar} 
+                    currentImage={user.avatar} 
                     onImageSelected={(img) => setUser({ ...user, avatar: img })}
                     label="Change Photo"
                 />
@@ -507,7 +507,7 @@ const App: React.FC = () => {
             
             <Input 
                 label="Full Name"
-                value={user.n?ame}
+                value={user.name}
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
             />
             
